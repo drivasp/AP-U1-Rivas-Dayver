@@ -1,0 +1,113 @@
+1; 0; INICIO; modo=NORMAL cupo=10
+1; 0; INICIO; modo=NORMAL cupo=10
+1; 1; INICIO; ventanilla=1
+1; 2; INICIO; ventanilla=2
+1; 3; INICIO; ventanilla=3
+1; 3; INICIO; ventanilla=3
+3; 0; VENTANILLA_ACTIVA; ventanilla=1
+5; 0; VENTANILLA_ACTIVA; ventanilla=2
+9; 0; VENTANILLA_ACTIVA; ventanilla=3
+22; 1; ENVIA_TURNO; a=0 msg=V1-1
+23; 0; RECIBE_TURNO; de=1 msg=V1-1
+24; 0; ENVIA_ASIGNADO; a=1 numero=1 msg=V1-1
+24; 3; ENVIA_TURNO; a=0 msg=V3-1
+25; 1; RECIBE_ASIGNADO; de=0 numero=1 msg=V1-1
+28; 2; ENVIA_TURNO; a=0 msg=V2-1
+29; 0; RECIBE_TURNO; de=2 msg=V2-1
+30; 0; ENVIA_ASIGNADO; a=2 numero=2 msg=V2-1
+30; 1; ENVIA_TURNO; a=0 msg=V1-2
+31; 0; RECIBE_TURNO; de=3 msg=V3-1
+31; 2; RECIBE_ASIGNADO; de=0 numero=2 msg=V2-1
+32; 0; ENVIA_ASIGNADO; a=3 numero=3 msg=V3-1
+33; 3; RECIBE_ASIGNADO; de=0 numero=3 msg=V3-1
+38; 3; ENVIA_LLAMAR; a=0 msg=V3-2
+39; 0; RECIBE_TURNO; de=1 msg=V1-2
+40; 0; ENVIA_ASIGNADO; a=1 numero=4 msg=V1-2
+40; 2; ENVIA_LLAMAR; a=0 msg=V2-2
+41; 1; RECIBE_ASIGNADO; de=0 numero=4 msg=V1-2
+45; 0; RECIBE_LLAMAR; de=2 msg=V2-2
+46; 0; ENVIA_LLAMADO; a=2 numero=1 msg=V2-2
+46; 1; ENVIA_ESTADO; a=0 msg=V1-3
+47; 0; RECIBE_LLAMAR; de=3 msg=V3-2
+47; 2; RECIBE_LLAMADO; de=0 numero=1 msg=V2-2
+48; 0; ENVIA_LLAMADO; a=3 numero=2 msg=V3-2
+49; 3; RECIBE_LLAMADO; de=0 numero=2 msg=V3-2
+55; 0; RECIBE_ESTADO; de=1 msg=V1-3
+56; 0; ENVIA_INFO; emitidos=4 enEspera=2 1=ACTIVA,2=ACTIVA,3=ACTIVA
+56; 2; ENVIA_ESTADO; a=0 msg=V2-3
+57; 1; RECIBE_INFO; de=0 msg=V1-3
+61; 0; RECIBE_ESTADO; de=2 msg=V2-3
+62; 0; ENVIA_INFO; emitidos=4 enEspera=2 1=ACTIVA,2=ACTIVA,3=ACTIVA
+63; 2; RECIBE_INFO; de=0 msg=V2-3
+66; 3; ENVIA_ESTADO; a=0 msg=V3-3
+67; 0; RECIBE_ESTADO; de=3 msg=V3-3
+68; 0; ENVIA_INFO; emitidos=4 enEspera=2 1=ACTIVA,2=ACTIVA,3=ACTIVA
+69; 3; RECIBE_INFO; de=0 msg=V3-3
+74; 1; ENVIA_LLAMAR; a=0 msg=V1-4
+75; 0; RECIBE_LLAMAR; de=1 msg=V1-4
+76; 0; ENVIA_LLAMADO; a=1 numero=3 msg=V1-4
+77; 1; RECIBE_LLAMADO; de=0 numero=3 msg=V1-4
+78; 1; ENVIA_LLAMAR; a=0 msg=V1-5
+79; 0; RECIBE_LLAMAR; de=1 msg=V1-5
+80; 0; ENVIA_LLAMADO; a=1 numero=4 msg=V1-5
+81; 1; RECIBE_LLAMADO; de=0 numero=4 msg=V1-5
+82; 1; ENVIA_LLAMAR; a=0 msg=V1-6
+83; 0; RECIBE_LLAMAR; de=1 msg=V1-6
+84; 0; ENVIA_RECHAZADA; a=1 motivo=no hay turnos en espera msg=V1-6
+84; 2; ENVIA_TURNO; a=0 msg=V2-4
+85; 1; RECIBE_RECHAZADA; de=0 msg=V1-6
+89; 0; RECIBE_TURNO; de=2 msg=V2-4
+90; 0; ENVIA_ASIGNADO; a=2 numero=5 msg=V2-4
+91; 2; RECIBE_ASIGNADO; de=0 numero=5 msg=V2-4
+92; 2; ENVIA_TURNO; a=0 msg=V2-5
+93; 0; RECIBE_TURNO; de=2 msg=V2-5
+94; 0; ENVIA_ASIGNADO; a=2 numero=6 msg=V2-5
+95; 2; RECIBE_ASIGNADO; de=0 numero=6 msg=V2-5
+100; 2; ENVIA_TURNO; a=0 msg=V2-6
+101; 0; RECIBE_TURNO; de=2 msg=V2-6
+102; 0; ENVIA_ASIGNADO; a=2 numero=7 msg=V2-6
+103; 2; RECIBE_ASIGNADO; de=0 numero=7 msg=V2-6
+104; 2; ENVIA_TURNO; a=0 msg=V2-7
+105; 0; RECIBE_TURNO; de=2 msg=V2-7
+106; 0; ENVIA_ASIGNADO; a=2 numero=8 msg=V2-7
+107; 2; RECIBE_ASIGNADO; de=0 numero=8 msg=V2-7
+108; 2; ENVIA_TURNO; a=0 msg=V2-8
+109; 0; RECIBE_TURNO; de=2 msg=V2-8
+110; 0; ENVIA_ASIGNADO; a=2 numero=9 msg=V2-8
+111; 2; RECIBE_ASIGNADO; de=0 numero=9 msg=V2-8
+116; 2; ENVIA_TURNO; a=0 msg=V2-9
+117; 0; RECIBE_TURNO; de=2 msg=V2-9
+118; 0; ENVIA_ASIGNADO; a=2 numero=10 msg=V2-9
+118; 1; ENVIA_TURNO; a=0 msg=V1-7
+119; 2; RECIBE_ASIGNADO; de=0 numero=10 msg=V2-9
+120; 2; ENVIA_TURNO; a=0 msg=V2-10
+121; 0; RECIBE_TURNO; de=2 msg=V2-10
+122; 0; ENVIA_RECHAZADA; a=2 motivo=cupo agotado msg=V2-10
+123; 2; RECIBE_RECHAZADA; de=0 msg=V2-10
+127; 0; TOKEN_INVALIDO; de=1 tipo=TURNO msg=V1-7 token=token-incorrecto
+128; 0; ENVIA_RECHAZADA; a=1 motivo=token invalido msg=V1-7
+129; 1; RECIBE_RECHAZADA; de=0 msg=V1-7
+149; 0; VENTANILLA_CAIDA; ventanilla=3 sin latido hace 6618 ms
+157; 1; ENVIA_ESTADO; a=0 msg=V1-8
+158; 0; RECIBE_ESTADO; de=1 msg=V1-8
+159; 0; ENVIA_INFO; emitidos=10 enEspera=6 1=ACTIVA,2=ACTIVA,3=CAIDA
+160; 0; VENTANILLA_ACTIVA; ventanilla=3
+160; 1; RECIBE_INFO; de=0 msg=V1-8
+179; 1; ENVIA_ESTADO; a=0 msg=V1-9
+180; 0; RECIBE_ESTADO; de=1 msg=V1-9
+181; 0; ENVIA_INFO; emitidos=10 enEspera=6 1=ACTIVA,2=ACTIVA,3=ACTIVA
+182; 1; RECIBE_INFO; de=0 msg=V1-9
+186; 3; FALLO_COORDINADOR; latido fallido ConnectException
+188; 2; FALLO_COORDINADOR; latido fallido ConnectException
+190; 1; FALLO_COORDINADOR; latido fallido ConnectException
+191; 1; ENVIA_TURNO; a=0 msg=V1-10
+192; 1; FALLO_COORDINADOR; ConnectException
+195; 0; VENTANILLA_ACTIVA; ventanilla=1
+197; 0; VENTANILLA_ACTIVA; ventanilla=3
+198; 1; COORDINADOR_RECUPERADO; latidos ok
+199; 0; VENTANILLA_ACTIVA; ventanilla=2
+200; 3; COORDINADOR_RECUPERADO; latidos ok
+202; 2; COORDINADOR_RECUPERADO; latidos ok
+210; 1; FIN; ventanilla=1
+212; 3; FIN; ventanilla=3
+214; 2; FIN; ventanilla=2

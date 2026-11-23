@@ -1,0 +1,11 @@
+1; 3; INICIO; ventanilla=3
+24; 3; ENVIA_TURNO; a=0 msg=V3-1
+33; 3; RECIBE_ASIGNADO; de=0 numero=3 msg=V3-1
+38; 3; ENVIA_LLAMAR; a=0 msg=V3-2
+49; 3; RECIBE_LLAMADO; de=0 numero=2 msg=V3-2
+66; 3; ENVIA_ESTADO; a=0 msg=V3-3
+69; 3; RECIBE_INFO; de=0 msg=V3-3
+1; 3; INICIO; ventanilla=3
+186; 3; FALLO_COORDINADOR; latido fallido ConnectException
+200; 3; COORDINADOR_RECUPERADO; latidos ok
+212; 3; FIN; ventanilla=3

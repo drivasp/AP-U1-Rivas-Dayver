@@ -1,0 +1,63 @@
+1; 0; INICIO; modo=INSEGURO cupo=10
+12; 0; RECIBE_TURNO; de=2 msg=PC2-2
+37; 0; RECIBE_TURNO; de=1 msg=PC1-4
+33; 0; RECIBE_TURNO; de=2 msg=PC2-5
+43; 0; RECIBE_TURNO; de=3 msg=PC3-9
+36; 0; RECIBE_TURNO; de=1 msg=PC1-8
+35; 0; RECIBE_TURNO; de=2 msg=PC2-9
+34; 0; RECIBE_TURNO; de=3 msg=PC3-4
+30; 0; RECIBE_TURNO; de=3 msg=PC3-6
+32; 0; RECIBE_TURNO; de=1 msg=PC1-2
+31; 0; RECIBE_TURNO; de=1 msg=PC1-5
+26; 0; RECIBE_TURNO; de=2 msg=PC2-3
+28; 0; RECIBE_TURNO; de=3 msg=PC3-7
+29; 0; RECIBE_TURNO; de=1 msg=PC1-9
+25; 0; RECIBE_TURNO; de=2 msg=PC2-10
+27; 0; RECIBE_TURNO; de=3 msg=PC3-2
+53; 0; RECIBE_TURNO; de=2 msg=PC2-8
+52; 0; RECIBE_TURNO; de=1 msg=PC1-10
+51; 0; RECIBE_TURNO; de=3 msg=PC3-10
+50; 0; RECIBE_TURNO; de=3 msg=PC3-1
+48; 0; RECIBE_TURNO; de=2 msg=PC2-7
+49; 0; RECIBE_TURNO; de=1 msg=PC1-7
+47; 0; RECIBE_TURNO; de=1 msg=PC1-6
+46; 0; RECIBE_TURNO; de=1 msg=PC1-1
+44; 0; RECIBE_TURNO; de=2 msg=PC2-6
+45; 0; RECIBE_TURNO; de=3 msg=PC3-3
+42; 0; RECIBE_TURNO; de=3 msg=PC3-8
+41; 0; RECIBE_TURNO; de=3 msg=PC3-5
+40; 0; RECIBE_TURNO; de=1 msg=PC1-3
+39; 0; RECIBE_TURNO; de=2 msg=PC2-1
+38; 0; RECIBE_TURNO; de=2 msg=PC2-4
+64; 0; ENVIA_ASIGNADO; a=3 numero=1 msg=PC3-9
+58; 0; ENVIA_ASIGNADO; a=2 numero=1 msg=PC2-9
+69; 0; ENVIA_ASIGNADO; a=2 numero=1 msg=PC2-4
+66; 0; ENVIA_ASIGNADO; a=2 numero=1 msg=PC2-3
+56; 0; ENVIA_ASIGNADO; a=3 numero=1 msg=PC3-7
+55; 0; ENVIA_ASIGNADO; a=2 numero=1 msg=PC2-2
+81; 0; ENVIA_ASIGNADO; a=1 numero=1 msg=PC1-1
+77; 0; ENVIA_ASIGNADO; a=3 numero=1 msg=PC3-2
+80; 0; ENVIA_ASIGNADO; a=2 numero=1 msg=PC2-6
+73; 0; ENVIA_ASIGNADO; a=3 numero=1 msg=PC3-8
+59; 0; ENVIA_ASIGNADO; a=2 numero=1 msg=PC2-5
+63; 0; ENVIA_ASIGNADO; a=1 numero=1 msg=PC1-2
+60; 0; ENVIA_ASIGNADO; a=1 numero=1 msg=PC1-9
+78; 0; ENVIA_ASIGNADO; a=2 numero=1 msg=PC2-10
+75; 0; ENVIA_ASIGNADO; a=1 numero=1 msg=PC1-10
+74; 0; ENVIA_ASIGNADO; a=3 numero=1 msg=PC3-1
+71; 0; ENVIA_ASIGNADO; a=3 numero=1 msg=PC3-10
+57; 0; ENVIA_ASIGNADO; a=1 numero=1 msg=PC1-5
+68; 0; ENVIA_ASIGNADO; a=1 numero=1 msg=PC1-3
+72; 0; ENVIA_ASIGNADO; a=2 numero=1 msg=PC2-7
+83; 0; ENVIA_ASIGNADO; a=1 numero=1 msg=PC1-7
+65; 0; ENVIA_ASIGNADO; a=3 numero=1 msg=PC3-4
+76; 0; ENVIA_ASIGNADO; a=2 numero=1 msg=PC2-8
+62; 0; ENVIA_ASIGNADO; a=3 numero=1 msg=PC3-6
+70; 0; ENVIA_ASIGNADO; a=3 numero=1 msg=PC3-3
+61; 0; ENVIA_ASIGNADO; a=1 numero=1 msg=PC1-8
+79; 0; ENVIA_ASIGNADO; a=3 numero=1 msg=PC3-5
+67; 0; ENVIA_ASIGNADO; a=2 numero=1 msg=PC2-1
+54; 0; ENVIA_ASIGNADO; a=1 numero=1 msg=PC1-4
+82; 0; ENVIA_ASIGNADO; a=1 numero=1 msg=PC1-6
+84; 0; RECIBE_ESTADO; de=9 msg=PC-estado
+85; 0; ENVIA_INFO; emitidos=1 enEspera=30 1=CAIDA,2=CAIDA,3=CAIDA

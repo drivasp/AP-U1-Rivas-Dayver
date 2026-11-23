@@ -1,0 +1,7 @@
+Peticiones enviadas: 30
+ASIGNADO: 30
+RECHAZADA: 0
+Numeros unicos (Set): 1
+Numeros repetidos: 29
+Emitidos segun coordinador: 1 (cupo 10)
+Resultado: INCONSISTENTE (condicion de carrera)

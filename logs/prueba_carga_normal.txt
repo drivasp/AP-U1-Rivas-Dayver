@@ -1,0 +1,7 @@
+Peticiones enviadas: 30
+ASIGNADO: 10
+RECHAZADA: 20
+Numeros unicos (Set): 10
+Numeros repetidos: 0
+Emitidos segun coordinador: 10 (cupo 10)
+Resultado: CONSISTENTE
