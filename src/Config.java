@@ -5,7 +5,8 @@ import java.util.Properties;
 public class Config {
     static String host = "127.0.0.1";
     static int puerto = 5000;
-    static int cupo = 20;
+    static int cupo = 10;
+    static String token = "";
     static int latido = 2000;
     static int timeout = 6000;
 
@@ -18,6 +19,7 @@ public class Config {
             cupo = Integer.parseInt(p.getProperty("cupo.maximo"));
             latido = Integer.parseInt(p.getProperty("latido.intervalo.ms"));
             timeout = Integer.parseInt(p.getProperty("latido.timeout.ms"));
+            token = p.getProperty("token");
         } catch (Exception e) {
             System.out.println("No se puede leer ");
         }

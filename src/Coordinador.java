@@ -52,9 +52,16 @@ public class Coordinador {
             int origen = Json.getInt(linea, "origen");
             String msg = Json.get(linea, "msg");
             int l = reloj.recibir(Json.getInt(linea, "lamport"));
+            String token = Json.get(linea, "token");
 
             String respuesta;
-            if (tipo.equals("LATIDO")) {
+            if (token == null || !token.equals(Config.token)) {
+                log.escribir(l, "TOKEN_INVALIDO", "de=" + origen + " tipo=" + tipo + " msg=" + msg + " token=" + token);
+                int lr = reloj.tick();
+                log.escribir(lr, "ENVIA_RECHAZADA", "a=" + origen + " motivo=token invalido msg=" + msg);
+                respuesta = "{\"tipo\":\"RECHAZADA\",\"origen\":0,\"lamport\":" + lr + ",\"motivo\":\"token invalido\",\"msg\":\"" + msg + "\"}";
+                System.out.println("Solicitud rechazada por token invalido (origen " + origen + ")");
+            } else if (tipo.equals("LATIDO")) {
                 respuesta = latido(origen, l);
             } else {
                 log.escribir(l, "RECIBE_" + tipo, "de=" + origen + " msg=" + msg);
@@ -116,7 +123,7 @@ public class Coordinador {
 
         int l = reloj.tick();
         if (numero == -1) {
-            log.escribir(l, "ENVIA_RECHAZADA", "a=" + origen + " msg=" + msg);
+            log.escribir(l, "ENVIA_RECHAZADA", "a=" + origen + " motivo=cupo agotado msg=" + msg);
             return "{\"tipo\":\"RECHAZADA\",\"origen\":0,\"lamport\":" + l + ",\"motivo\":\"cupo agotado\",\"msg\":\"" + msg + "\"}";
         }
         log.escribir(l, "ENVIA_ASIGNADO", "a=" + origen + " numero=" + numero + " msg=" + msg);
@@ -130,8 +137,8 @@ public class Coordinador {
         }
         int l = reloj.tick();
         if (numero == null) {
-            log.escribir(l, "ENVIA_COLA_VACIA", "a=" + origen + " msg=" + msg);
-            return "{\"tipo\":\"COLA_VACIA\",\"origen\":0,\"lamport\":" + l + ",\"msg\":\"" + msg + "\"}";
+            log.escribir(l, "ENVIA_RECHAZADA", "a=" + origen + " motivo=no hay turnos en espera msg=" + msg);
+            return "{\"tipo\":\"RECHAZADA\",\"origen\":0,\"lamport\":" + l + ",\"motivo\":\"no hay turnos en espera\",\"msg\":\"" + msg + "\"}";
         }
         log.escribir(l, "ENVIA_LLAMADO", "a=" + origen + " numero=" + numero + " msg=" + msg);
         return "{\"tipo\":\"LLAMADO\",\"origen\":0,\"lamport\":" + l + ",\"numero\":" + numero + ",\"msg\":\"" + msg + "\"}";

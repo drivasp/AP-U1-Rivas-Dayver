@@ -29,16 +29,18 @@ public class Ventanilla {
         hilo.setDaemon(true);
         hilo.start();
 
-        System.out.println("Ventanilla " + id + " - comandos: turno, llamar, estado, salir");
+        System.out.println("Ventanilla " + id + " - comandos: turno, llamar, estado, turno-token-malo, salir");
         Scanner sc = new Scanner(System.in);
         while (sc.hasNextLine()) {
             String cmd = sc.nextLine().trim();
             if (cmd.equals("turno")) {
-                pedir("TURNO");
+                pedir("TURNO", Config.token);
+            } else if (cmd.equals("turno-token-malo")) {
+                pedir("TURNO", "token-incorrecto");
             } else if (cmd.equals("llamar")) {
-                pedir("LLAMAR");
+                pedir("LLAMAR", Config.token);
             } else if (cmd.equals("estado")) {
-                pedir("ESTADO");
+                pedir("ESTADO", Config.token);
             } else if (cmd.equals("salir")) {
                 break;
             } else if (!cmd.isEmpty()) {
@@ -48,12 +50,12 @@ public class Ventanilla {
         log.escribir(reloj.tick(), "FIN", "ventanilla=" + id);
     }
 
-    static void pedir(String tipo) {
+    static void pedir(String tipo, String token) {
         contador++;
         String msg = "V" + id + "-" + contador;
         int l = reloj.tick();
         log.escribir(l, "ENVIA_" + tipo, "a=0 msg=" + msg);
-        String json = "{\"tipo\":\"" + tipo + "\",\"origen\":" + id + ",\"lamport\":" + l + ",\"msg\":\"" + msg + "\"}";
+        String json = "{\"tipo\":\"" + tipo + "\",\"token\":\"" + token + "\",\"origen\":" + id + ",\"lamport\":" + l + ",\"msg\":\"" + msg + "\"}";
 
         try {
             String resp = enviar(json);
@@ -72,8 +74,6 @@ public class Ventanilla {
                 System.out.println("Rechazado: " + Json.get(resp, "motivo"));
             } else if (tipoResp.equals("LLAMADO")) {
                 System.out.println("Llamando al turno " + numero);
-            } else if (tipoResp.equals("COLA_VACIA")) {
-                System.out.println("No hay turnos en espera");
             } else if (tipoResp.equals("INFO")) {
                 System.out.println("Emitidos: " + Json.getInt(resp, "emitidos") + "/" + Json.getInt(resp, "cupo")
                         + " | En espera: " + Json.getInt(resp, "enEspera")
@@ -107,7 +107,7 @@ public class Ventanilla {
 
     static void latidos() {
         while (true) {
-            String json = "{\"tipo\":\"LATIDO\",\"origen\":" + id + ",\"lamport\":" + reloj.tick() + "}";
+            String json = "{\"tipo\":\"LATIDO\",\"token\":\"" + Config.token + "\",\"origen\":" + id + ",\"lamport\":" + reloj.tick() + "}";
             try {
                 String resp = enviar(json);
                 reloj.recibir(Json.getInt(resp, "lamport"));
